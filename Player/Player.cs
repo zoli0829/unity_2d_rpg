@@ -9,4 +9,17 @@ public class Player : MonoBehaviour
 
     // this property will return the stats var
     public PlayerStats Stats => stats;
+
+    private PlayerAnimations animations;
+
+    private void Awake()
+    {
+        animations = GetComponent<PlayerAnimations>();
+    }
+
+    public void ResetPlayer()
+    {
+        stats.ResetPlayer();
+        animations.ResetPlayer();
+    }
 }
