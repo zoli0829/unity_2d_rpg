@@ -17,6 +17,7 @@ public class PlayerExperience : MonoBehaviour
 
     public void AddExperience(float amount)
     {
+        stats.TotalExperience += amount;
         stats.CurrentExperience += amount;
         while (stats.CurrentExperience >= stats.NextLevelExperience)
         { 
@@ -28,6 +29,7 @@ public class PlayerExperience : MonoBehaviour
     private void NextLevel()
     {
         stats.Level++;
+        stats.AttributePoints++;
         float currentExpRequired = stats.NextLevelExperience;
         float newNextLevelExp = Mathf.Round(currentExpRequired + stats.NextLevelExperience * (stats.ExperienceMultiplier / 100f));
         stats.NextLevelExperience = newNextLevelExp;
