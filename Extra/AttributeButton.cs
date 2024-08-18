@@ -13,5 +13,6 @@ public class AttributeButton : MonoBehaviour
     public void SelectAttribute()
     {
         OnAttributeSelectedEvent?.Invoke(attribute);
+
     }
 }
