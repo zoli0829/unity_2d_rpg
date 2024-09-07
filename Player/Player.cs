@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [Header("Test")]
     public ItemHealthPotion HealthPotion;
+    public ItemManaPotion ManaPotion;
 
     // this property will return the stats var
     public PlayerStats Stats => stats;
@@ -32,7 +33,13 @@ public class Player : MonoBehaviour
             {
                 Debug.Log("USING HEALTH POTION");
             }
+
+            if (ManaPotion.UseItem())
+            {
+                Debug.Log("USING MANA POTION");
+            }
         }
+
     }
 
     public void ResetPlayer()
